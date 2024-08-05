@@ -1,5 +1,4 @@
-﻿/*
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using IPA.Config.Stores;
 
 [assembly: InternalsVisibleTo(GeneratedStore.AssemblyVisibilityTarget)]
@@ -8,7 +7,11 @@ namespace BS_Patstrap_support.Configuration
     internal class PluginConfig
     {
         public static PluginConfig Instance { get; set; }
-        public virtual int IntValue { get; set; } = 42; // Must be 'virtual' if you want BSIPA to detect a value change and save the config automatically.
+        public virtual int AddressOne { get; set; } = 127; // Must be 'virtual' if you want BSIPA to detect a value change and save the config automatically.
+        public virtual int AddressTwo { get; set; } = 0;
+        public virtual int AddressThree { get; set; } = 0;
+        public virtual int AddressFour { get; set; } = 1;
+
 
         /// <summary>
         /// This is called whenever BSIPA reads the config from disk (including when file changes are detected).
@@ -35,4 +38,3 @@ namespace BS_Patstrap_support.Configuration
         }
     }
 }
-*/

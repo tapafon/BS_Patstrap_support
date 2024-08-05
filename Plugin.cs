@@ -1,4 +1,5 @@
-﻿using IPA;
+﻿using BS_Patstrap_support.Configuration;
+using IPA;
 using IPA.Config;
 using IPA.Config.Stores;
 using System;
@@ -24,11 +25,13 @@ namespace BS_Patstrap_support
         /// [Init] methods that use a Constructor or called before regular methods like InitWithConfig.
         /// Only use [Init] with one Constructor.
         /// </summary>
-        public void Init(IPALogger logger)
+        public void Init(IPALogger logger, Config config)
         {
             Instance = this;
             Log = logger;
             Log.Info("BS_Patstrap_support initialized.");
+            PluginConfig.Instance = config.Generated<PluginConfig>();
+            Log.Info("Config loaded");
         }
 
         #region BSIPA Config

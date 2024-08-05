@@ -2,11 +2,14 @@
   "$schema": "https://raw.githubusercontent.com/bsmg/BSIPA-MetadataFileSchema/master/Schema.json",
   "id": "BS_Patstrap_support",
   "name": "BS_Patstrap_support",
-  "author": "",
-  "version": "0.0.1",
-  "description": "",
+  "author": "tapafon",
+  "version": "0.0.2",
+  "description": "A Beat Saber IPA mod which adds PatStrap support to the game.",
   "gameVersion": "1.18.3",
   "dependsOn": {
     "BSIPA": "^4.2.0"
+  },
+  "links": {
+    "project-source": "https://github.com/tapafon/BS_Patstrap_support"
   }
 }

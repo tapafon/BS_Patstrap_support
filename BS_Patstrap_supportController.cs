@@ -9,6 +9,9 @@ using UnityEngine;
 using CoreOSC;
 using CoreOSC.IO;
 using System.Net.Sockets;
+using IPA.Config;
+using IPA.Utilities;
+using BS_Patstrap_support.Configuration;
 
 namespace BS_Patstrap_support
 {
@@ -22,7 +25,9 @@ namespace BS_Patstrap_support
 
         UdpClient patStrapServer;
 
-        String ipAddress = "127.0.0.1";
+        String ipAddress;
+
+        Config config;
 
         // These methods are automatically called by Unity, you should remove any you aren't using.
         #region Monobehaviour Messages
@@ -48,6 +53,8 @@ namespace BS_Patstrap_support
         /// </summary>
         private void Start()
         {
+            ipAddress = $"{PluginConfig.Instance.AddressOne}.{PluginConfig.Instance.AddressTwo}.{PluginConfig.Instance.AddressThree}.{PluginConfig.Instance.AddressFour}";
+            Plugin.Log?.Info($"Read {ipAddress} from config.");
             patStrapServer = new UdpClient(ipAddress, 9001); //connecting to original PatStrap server
         }
 
@@ -74,7 +81,6 @@ namespace BS_Patstrap_support
                     PlayerHeadAndObstacleInteraction wall = obstacle[0]; //another object
                     if (wall.playerHeadIsInObstacle) //reality check
                     {
-                        //Plugin.Log.Info("pat_all because we are in the wall");
                         //screw "3d effect", there's only one collider provided by BS
                         await patStrapServer.SendMessageAsync(msg1);
                         await patStrapServer.SendMessageAsync(msg2);
