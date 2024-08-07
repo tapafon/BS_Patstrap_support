@@ -13,7 +13,7 @@ This mod is made for PCVR version of Beat Saber (both Steam and Oculus). It won'
 
 Of course, your game copy has to be modded. If it isn't, [BSMG Wiki](https://bsmg.wiki/pc-modding.html) is the best place to get started.
 
-To install it, you have to download both *.dll files and drag it into `%BeatSaber_directory%/Plugins/` folder. The second file is CoreOSC library, which is used by this mod, and which is distributed with it for your convenience.
+To install it, you have to download both *.dll files, drag `BS_Patstrap_support.dll` into `%BeatSaber_directory%/Plugins/` folder. The second file is `CoreOSC.dll` library, which is used by this mod, and which is distributed with it for your convenience. You should drag it into `%BeatSaber_directory%/Libs/` folder.
 
 When you bootup the game, `VRChat connection` in PatStrap server should turn blue. If it is, congrats.
 
