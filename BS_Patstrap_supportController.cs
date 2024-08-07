@@ -29,6 +29,8 @@ namespace BS_Patstrap_support
 
         Config config;
 
+        bool iteration = true;
+
         // These methods are automatically called by Unity, you should remove any you aren't using.
         #region Monobehaviour Messages
         /// <summary>
@@ -47,6 +49,7 @@ namespace BS_Patstrap_support
             GameObject.DontDestroyOnLoad(this); // Don't destroy this object on scene changes
             Instance = this;
             Plugin.Log?.Debug($"{name}: Awake()");
+            
         }
         /// <summary>
         /// Only ever called once on the first frame the script is Enabled. Start is called after any other script's Awake() and before Update().
@@ -63,13 +66,15 @@ namespace BS_Patstrap_support
         /// </summary>
         private async void Update()
         {
-            System.Random random = new System.Random();
-
             PlayerHeadAndObstacleInteraction[] obstacle = Resources.FindObjectsOfTypeAll<PlayerHeadAndObstacleInteraction>(); //find that component, no matter where
                 Address pl = new Address("/avatar/parameters/pat_left");
                 Address pr = new Address("/avatar/parameters/pat_right");
                 Address pd = new Address("/avatar/parameters/dummy");
-                float x = (float) random.NextDouble() * 0.5F + 0.25F;
+                float x;
+                if (iteration) // "emulating" headpats for server
+                    x = 0f;
+                else
+                    x = 1f;
                 object[] obj = new object[] { x };
 
                 var msg1 = new OscMessage(pl, obj);
@@ -84,6 +89,7 @@ namespace BS_Patstrap_support
                         //screw "3d effect", there's only one collider provided by BS
                         await patStrapServer.SendMessageAsync(msg1);
                         await patStrapServer.SendMessageAsync(msg2);
+                        iteration = !iteration; //here, not each frame to avoid getting same values
                     }
                     else
                     {
@@ -95,23 +101,6 @@ namespace BS_Patstrap_support
                     await patStrapServer.SendMessageAsync(msg3); //dummy message to trick PatStrap server that VRC is working
                 }
         }
-
-        /// <summary>
-        /// Called every frame after every other enabled script's Update().
-        /// </summary>
-        private void LateUpdate()
-        {
-
-        }
-
-        /// <summary>
-        /// Called when the script becomes enabled and active
-        /// </summary>
-        private void OnEnable()
-        {
-
-        }
-
         /// <summary>
         /// Called when the script becomes disabled or when it is being destroyed.
         /// </summary>

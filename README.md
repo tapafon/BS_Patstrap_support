@@ -1,5 +1,5 @@
 # BS_Patstrap_support
-A free IPA mod for Beat Saber which adds [Patstrap](https://github.com/danielfvm/Patstrap) support to the game. Still WIP *(Work In Progress)*, but now it got to useable state.
+A free IPA mod for Beat Saber which adds [Patstrap](https://github.com/danielfvm/Patstrap) support to the game.
 
 How it works? It makes your Patstrap vibrate when you walk into the wall (or obstacle, how it's officially called), that's it!
 

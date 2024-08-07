@@ -3,7 +3,7 @@
   "id": "BS_Patstrap_support",
   "name": "BS_Patstrap_support",
   "author": "tapafon",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "A Beat Saber IPA mod which adds PatStrap support to the game.",
   "gameVersion": "1.18.3",
   "dependsOn": {
