@@ -28,3 +28,7 @@ If not, and you did everything correctly, but VRC works and it's also setup corr
 [PatStrap](https://github.com/danielfvm/Patstrap) for the original project. This mod wouldn't exist without it.
 
 [CoreOSC](https://github.com/dastevens/CoreOSC) for the C# library to implement OSC protocol. Licensed under MIT License.
+
+## You would also like
+
+[SR_Patstrap_support](https://github.com/tapafon/SR_Patstrap_support) same mod, but for Synth Riders
