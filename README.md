@@ -23,6 +23,10 @@ If not, and you did everything correctly, but VRC works and it's also setup corr
 
 [![BS_Patstrap_support demo on YouTube](https://img.youtube.com/vi/aXWG7DCr3hw/0.jpg)](https://www.youtube.com/watch?v=aXWG7DCr3hw)
 
+## License
+
+Licensed under [MIT License](https://opensource.org/license/mit), like every other GlobalGameJam stuff by default.
+
 ## Credits
 
 [PatStrap](https://github.com/danielfvm/Patstrap) for the original project. This mod wouldn't exist without it.
